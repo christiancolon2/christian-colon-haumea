@@ -114,3 +114,43 @@ h1 {
     display: block;    /* Makes the image a block element */
     margin: 0 auto 15px auto;   /* Centers the image horizontally with some space below */
 }
+
+/* ---------- Tablet Styles ---------- */
+@media (min-width: 768px) and (max-width: 1024px) {
+    /* Element 1: Headers */
+    h1, h2 {
+        font-size: 2em; 
+        color: #336699; 
+    }
+
+    /* Element 2: Unordered Lists */
+    ul {
+        padding: 20px;  
+        background-color: #f8f8f8;
+    }
+
+    /* Element 3: Your Name */
+    h1 {
+        font-size: 3.5em; 
+        font-style: italic;
+    }
+}
+
+/* ---------- Desktop Styles ---------- */
+@media (min-width: 1025px) {
+    /* Element 1: Sections */
+    section {
+        margin-bottom: 50px;  
+    }
+
+    /* Element 2: Experience Items */
+    .experience-item {
+        width: 45%; 
+        margin: 0 10px 20px 10px; 
+    }
+
+    /* Element 3: Navigation Links */
+    nav ul li a {
+        font-size: 18px; 
+    }
+} 
