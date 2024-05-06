@@ -154,3 +154,10 @@ h1 {
         font-size: 18px; 
     }
 } 
+#Skills ul {
+    text-align: center; /* Centers the list items horizontally */
+    list-style-type: none; /* Removes bullet points (optional) */
+    padding: 0; /* Removes default padding (optional) */
+    margin: 20px 0; /* Add some spacing above and below (optional) */
+}
+
