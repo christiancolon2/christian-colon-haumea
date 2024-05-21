@@ -105,3 +105,44 @@ messageForm.addEventListener('submit', function(event) {
 
     messageForm.reset();
 });
+
+// Fetch GitHub repositories
+// Fetch GitHub repositories
+fetch('https://api.github.com/users/christiancolon2/repos')
+    .then(response => response.json())
+    .then(repositories => {
+    
+    
+        // This is where you'll place the code for creating the project list items
+        const projectsSection = document.getElementById('Projects');
+        const projectList = document.createElement('ul'); // Create a list to hold projects
+
+        
+        projectsSection.appendChild(projectList); // Add the list to the section
+
+        repositories.forEach(repo => {
+            const projectItem = document.createElement('li');
+            const projectLink = document.createElement('a');
+            projectLink.href = repo.html_url;  // Link to the GitHub repository
+            projectLink.target = '_blank';    // Open link in a new tab
+            projectLink.textContent = repo.name; // Display repository name
+
+            // (Optional) Add description
+            // const projectDescription = document.createElement('p');
+            // projectDescription.textContent = repo.description || 'No description available';
+            // projectItem.appendChild(projectDescription);
+
+            projectItem.appendChild(projectLink);
+            projectList.appendChild(projectItem);
+        });
+    })
+    .catch(error => {
+        console.error('Error fetching GitHub data:', error); 
+
+        // Display an error message to the user
+        const projectsSection = document.getElementById('Projects');
+        const errorMessage = document.createElement('p');
+        errorMessage.textContent = 'Sorry, there was an error loading my projects. Please try again later.';
+        projectsSection.appendChild(errorMessage);
+    });
+
