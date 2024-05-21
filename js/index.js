@@ -26,3 +26,82 @@ for (let i = 0; i < skills.length; i++) {
     // Append the skill to the skills list
     skillsList.appendChild(skill); 
 }
+
+// Select the message form
+const messageForm = document.forms.leave_message;
+
+// Add an event listener for the "submit" event
+messageForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    // Retrieve form field values
+    const usersName = event.target.usersName.value;
+    const usersEmail = event.target.usersEmail.value;
+    const usersMessage = event.target.usersMessage.value;
+
+    const messageSection = document.getElementById('messages');
+    const messageList = messageSection.querySelector('ul');
+
+    // Create a new list item for the message
+    const newMessage = document.createElement('li');
+
+    // Set the inner HTML with the name as a link and message
+    newMessage.innerHTML = `
+        <a href="mailto:${usersEmail}">${usersName}</a>:
+        <span>${usersMessage}</span>
+    `;
+
+    // Create remove button
+    const removeButton = document.createElement('button');
+    removeButton.type = 'button';
+    removeButton.textContent = 'Remove';
+    removeButton.addEventListener('click', function() {
+        const entry = this.parentNode; // Find the parent li element
+        entry.remove();  // Remove the message from the DOM
+    });
+
+    // Append remove button to the new message
+    newMessage.appendChild(removeButton);
+
+    // Append the new message to the message list
+    messageList.appendChild(newMessage);
+
+    // Show/Hide the ENTIRE message section based on list content
+    if (messageList.children.length > 0) {
+        messageSection.style.display = 'block'; // Show if messages exist
+    } else {
+        messageSection.style.display = 'none'; // Hide if no messages
+    }
+
+    // Create edit button
+    const editButton = document.createElement('button');
+    editButton.type = 'button';
+    editButton.textContent = 'Edit';
+    editButton.addEventListener('click', function() {
+        const messageSpan = newMessage.querySelector('span');
+        const originalMessage = messageSpan.textContent;
+
+        // Replace message with an input field for editing
+        const editInput = document.createElement('input');
+        editInput.type = 'text';
+        editInput.value = originalMessage;
+        messageSpan.replaceWith(editInput);
+
+        // Change edit button to a save button
+        editButton.textContent = 'Save';
+        editButton.removeEventListener('click', arguments.callee); // Remove the old click handler
+        editButton.addEventListener('click', function() {
+            const newMessageText = editInput.value;
+            messageSpan.textContent = newMessageText;
+            editInput.replaceWith(messageSpan); // Restore the original span
+            editButton.textContent = 'Edit';
+            editButton.removeEventListener('click', arguments.callee); // Remove the save handler
+            editButton.addEventListener('click', arguments.callee); // Re-add the edit handler
+        });
+    });
+
+    // Append edit button to the new message
+    newMessage.appendChild(editButton);
+
+    messageForm.reset();
+});

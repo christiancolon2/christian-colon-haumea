@@ -65,8 +65,31 @@
             <li><a href="https://github.com/christiancolon2"><img src="https://cdn.worldvectorlogo.com/logos/github-icon-2.svg" alt="GitHub Icon"></a></li>
             <li><a href="https://www.linkedin.com/in/christian-anthony-colon/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/LinkedIn_icon.svg/2048px-LinkedIn_icon.svg.png" alt="LinkedIn Icon"></a></li>
         </ul>
-    </section>    
+    </section>
+    <section id="contact-form">
+        <h2>Leave a Message</h2>
+        <form name="leave_message">
+            <div>
+                <label for="usersName">Name:</label><br>
+                <input type="text" name="usersName" id="usersName" required>
+            </div>
+            <div>
+                <label for="usersEmail">Email:</label><br>
+                <input type="email" name="usersEmail" id="usersEmail" required>
+            </div>
+            <div>
+                <label for="usersMessage">Message:</label><br>
+                <textarea name="usersMessage" id="usersMessage" required></textarea>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+    <section id="messages">
+        <h2>Messages</h2>
+        <ul></ul>
+    </section>
     <script src="js/index.js"></script>   
+    <Footer></Footer>
 </body>
 </html>
 
