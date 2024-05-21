@@ -66,12 +66,6 @@ messageForm.addEventListener('submit', function(event) {
     // Append the new message to the message list
     messageList.appendChild(newMessage);
 
-    // Show/Hide the ENTIRE message section based on list content
-    if (messageList.children.length > 0) {
-        messageSection.style.display = 'block'; // Show if messages exist
-    } else {
-        messageSection.style.display = 'none'; // Hide if no messages
-    }
 
     // Create edit button
     const editButton = document.createElement('button');
