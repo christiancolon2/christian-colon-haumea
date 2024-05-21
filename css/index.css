@@ -161,3 +161,31 @@ h1 {
     margin: 20px 0; /* Add some spacing above and below (optional) */
 }
 
+#Projects {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;    
+    list-style-type: none; 
+}
+
+#contact-form {
+    display: flex;
+    flex-direction: column; /* (Optional if you want form elements stacked vertically) */
+    justify-content: center; /* Horizontally center */
+    align-items: center; /* Vertically center */
+}
+
+#messages ul { /* Target the ul within the #messages section */
+    list-style-type: none; /* Remove default bullet points (optional) */
+    text-align: center;  /* Center the list items horizontally */
+    padding: 0;        /* Reset default padding for cleaner look */
+}
+
+#messages ul li{ /* Target the individual message list items */
+    margin: 10px 0;    /* Add some spacing between messages (optional) */
+}
+
+footer {
+    text-align: center;
+}
