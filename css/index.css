@@ -2,162 +2,195 @@
 body {
     background-color: #f0f0f5;
     color: #333333;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     margin: 0;
-}
-
-nav {
-    position: sticky; /* Enables sticky behavior */
-    top: 0;           /* Sticks to the top of the screen */
-    background-color: #f0f0f5; /* Or your desired background color */ 
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow effect */
-    z-index: 10; /* Ensures the navigation stays on top of other elements */
-}
-
-/* Section Spacing  */
-section {
+  }
+  
+  /* Navigation Styling */
+  nav {
+    position: sticky;
+    top: 0;
+    background-color: #f0f0f5;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+  }
+  
+  /* Section Spacing */
+  section {
     padding: 20px;
-    margin-bottom: 30px; 
-}
-
-/* Centering the About Section */
-#About {
-    text-align: center; 
-}
-
-/* Heading Styles */
-h1, h2 { 
+    margin-bottom: 30px;
+  }
+  
+  /* About Section Centering */
+  #About {
+    text-align: center;
+  }
+  
+  /* Heading Styles */
+  h1,
+  h2 {
     font-size: 2.5em;
     font-weight: bold;
-    color: #2c3e50; 
+    color: #2c3e50;
     text-align: center;
-}
-
-/* Styling the Name */ 
-h1 { 
-    font-size: 3em;  
-    margin-bottom: 20px; 
-}
-
-/* Experience Section with Flexbox */
-#Experience {
-    display: flex; /* Makes the "Experience" section a flex container */
+  }
+  
+  /* Name Styling */
+  h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+  }
+  
+  /* Experience Section */
+  #Experience {
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap; /* Allows items to wrap onto multiple lines if needed */
-}
-
-/* Individual Experience Items */
-.experience-item {
+    flex-wrap: wrap;
+  }
+  
+  /* Experience Item Styling */
+  .experience-item {
     background-color: #e8e8e8;
     padding: 15px;
-    margin-bottom: 10px; 
-    border-radius: 5px; 
-    width: 85%; /* Adjust width as needed */
-    margin-right: 10px;  /* Add some margin between items */
-    display: flex;  /* Make each experience item a flex container */
-    flex-direction: column; /* Arrange elements vertically by default */
-}
-
-/* Job Title Styling */
-.experience-item h3 {
-    margin-bottom: 5px; /* Add some space below the job title */
-}
-
-/* Job Dates Styling */
-.experience-item p:first-child { /* Target the first paragraph within each item */
-    font-style: italic; /* Italicize dates */
-    margin-bottom: 5px;  /* Add some space below the dates */
-}
-
-/* Social Icon Links */
-#Connect ul {
+    margin-bottom: 10px;
+    border-radius: 5px;
+    width: 85%;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Job Title Styling */
+  .experience-item h3 {
+    margin-bottom: 5px;
+  }
+  
+  /* Job Dates Styling */
+  .experience-item p:first-child {
+    font-style: italic;
+    margin-bottom: 5px;
+  }
+  
+  /* Connect Section */
+  #Connect ul {
     list-style-type: none;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 20px;
-}
-
-
-#Connect ul li a { 
-    display: block; 
-    width: 50px; 
-    height: 50px; 
-    margin-right: 2px; 
-}
-
-#Connect ul li a:hover {
-    opacity: 0.8; 
-}
-
-/* ... your existing styles */
-
-/* Social Icon Links */
-#Connect ul li a img { 
-    width: 32px; /* Adjust the width */
-    height: 32px; /* Adjust the height */
-}
-
-.experience-list {
+  }
+  
+  #Connect ul li a {
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin-right: 2px;
+  }
+  
+  #Connect ul li a:hover {
+    opacity: 0.8;
+  }
+  
+  /* Social Icon Links */
+  #Connect ul li a img {
+    width: 32px;
+    height: 32px;
+  }
+  
+  /* Other Styles */
+  .experience-list {
     text-align: center;
-}
-
-#profilepic {
-    text-align: center; /* Centers the content within the section  */
-}
-
-#profilepic img {
-    max-width: 300px;  /* Adjust the maximum width. Image scales down proportionally */
-    max-height: 300px; /* Adjust the maximum height */
-    display: block;    /* Makes the image a block element */
-    margin: 0 auto 15px auto;   /* Centers the image horizontally with some space below */
-}
-
-/* ---------- Tablet Styles ---------- */
-@media (min-width: 768px) and (max-width: 1024px) {
+  }
+  
+  #profilepic {
+    text-align: center;
+  }
+  
+  #profilepic img {
+    max-width: 300px;
+    max-height: 300px;
+    display: block;
+    margin: 0 auto 15px auto;
+  }
+  
+  /* Media Queries */
+  /* ---------- Tablet Styles ---------- */
+  @media (min-width: 768px) and (max-width: 1024px) {
     /* Element 1: Headers */
-    h1, h2 {
-        font-size: 2em; 
-        color: #336699; 
+    h1,
+    h2 {
+      font-size: 2em;
+      color: #336699;
     }
-
+  
     /* Element 2: Unordered Lists */
     ul {
-        padding: 20px;  
-        background-color: #f8f8f8;
+      padding: 20px;
+      background-color: #f8f8f8;
     }
-
+  
     /* Element 3: Your Name */
     h1 {
-        font-size: 3.5em; 
-        font-style: italic;
+      font-size: 3.5em;
+      font-style: italic;
     }
-}
-
-/* ---------- Desktop Styles ---------- */
-@media (min-width: 1025px) {
+  }
+  
+  /* ---------- Desktop Styles ---------- */
+  @media (min-width: 1025px) {
     /* Element 1: Sections */
     section {
-        margin-bottom: 50px;  
+      margin-bottom: 50px;
     }
-
+  
     /* Element 2: Experience Items */
     .experience-item {
-        width: 45%; 
-        margin: 0 10px 20px 10px; 
+      width: 45%;
+      margin: 0 10px 20px 10px;
     }
-
+  
     /* Element 3: Navigation Links */
     nav ul li a {
-        font-size: 18px; 
+      font-size: 18px;
     }
-} 
-#Skills ul {
-    text-align: center; /* Centers the list items horizontally */
-    list-style-type: none; /* Removes bullet points (optional) */
-    padding: 0; /* Removes default padding (optional) */
-    margin: 20px 0; /* Add some spacing above and below (optional) */
-}
-
+  }
+  
+  #Skills ul {
+    text-align: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+  }
+  
+  #Projects {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+  }
+  
+  #contact-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #messages ul {
+    list-style-type: none;
+    text-align: center;
+    padding: 0;
+  }
+  
+  #messages ul li {
+    margin: 10px 0;
+  }
+  
+  footer {
+    text-align: center;
+  }
+  
+  
